@@ -26,6 +26,6 @@ class Game:
                 return f"{player_2_name} wins!"
         elif choice_1 == "Scissors":
             if choice_2 == "Rock":
-                return f"{player_1_name} wins!"
-            elif choice_2 == "Paper":
                 return f"{player_2_name} wins!"
+            elif choice_2 == "Paper":
+                return f"{player_1_name} wins!"
