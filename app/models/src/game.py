@@ -1,6 +1,6 @@
-from player import Player
+from src.player import Player
 
-class game:
+class Game:
     def __init__(self, player_1, player_2):
         self.player_1_name = player_1.name.capitalize()
         self.choice_1 = player_1.choice.capitalize()
