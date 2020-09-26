@@ -9,7 +9,7 @@ from app.models.src.game import *
 def index():
     return render_template("base.html", title="Home")
 
-@app.route('<name_1>/<choice_1>/<name_2>/<choice_2>')
+@app.route('/<name_1>/<choice_1>/<name_2>/<choice_2>')
 def result(name_1,choice_1,name_2,choice_2):
     player_1 = Player(name_1,choice_1)
     player_2 = Player(name_2,choice_2)

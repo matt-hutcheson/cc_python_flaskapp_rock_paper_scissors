@@ -1,6 +1,6 @@
 import unittest
 
-from src.player import Player
+from app.models.src.player import Player
 
 class TestPlayer(unittest.TestCase):
     def setUp(self):
