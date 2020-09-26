@@ -16,16 +16,16 @@ class Game:
             return None
         elif choice_1 == "Rock":
             if choice_2 == "Paper":
-                return f"{player_2_name} wins!"
+                return f"{player_2_name} wins by playing {choice_2.lower()}!"
             elif choice_2 == "Scissors":
-                return f"{player_1_name} wins!"
+                return f"{player_1_name} wins by playing {choice_1.lower()}!"
         elif choice_1 == "Paper":
             if choice_2 == "Rock":
-                return f"{player_1_name} wins!"
+                return f"{player_1_name} wins by playing {choice_1.lower()}!"
             elif choice_2 == "Scissors":
-                return f"{player_2_name} wins!"
+                return f"{player_2_name} wins by playing {choice_2.lower()}!"
         elif choice_1 == "Scissors":
             if choice_2 == "Rock":
-                return f"{player_2_name} wins!"
+                return f"{player_2_name} wins by playing {choice_2.lower()}!"
             elif choice_2 == "Paper":
-                return f"{player_1_name} wins!"
+                return f"{player_1_name} wins by playing {choice_1.lower()}!"
