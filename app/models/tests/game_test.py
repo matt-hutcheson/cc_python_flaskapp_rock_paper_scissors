@@ -43,3 +43,9 @@ class TestGame(unittest.TestCase):
         test_player_2 = Player("Tom", "Rock")
         test_game = Game(test_player_1, test_player_2)
         self.assertEqual("Tom wins!", test_game.play_game(test_game))
+
+    def test_scissors_paper__player2wins(self):
+        test_player_1 = Player("Bob", "Scissors")
+        test_player_2 = Player("Tom", "Paper")
+        test_game = Game(test_player_1, test_player_2)
+        self.assertEqual("Bob wins!", test_game.play_game(test_game))
