@@ -1,0 +1,2 @@
+FLASKAPP = app
+FLASKENV = development
