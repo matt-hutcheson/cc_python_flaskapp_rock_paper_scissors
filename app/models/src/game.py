@@ -7,7 +7,11 @@ class Game:
         self.player_2_name = player_2.name.capitalize()
         self.choice_2 = player_2.choice.capitalize()
 
-    def play_game(self, player_1_name, choice_1, player_2_name, choice_2):
+    def play_game(self, game_to_evaluate):
+        choice_1 = game_to_evaluate.choice_1
+        choice_2 = game_to_evaluate.choice_2
+        player_1_name = game_to_evaluate.player_1_name
+        player_2_name = game_to_evaluate.player_2_name
         if choice_1 == choice_2:
             return None
         elif choice_1 == "Rock":
