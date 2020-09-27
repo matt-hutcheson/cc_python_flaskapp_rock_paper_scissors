@@ -12,6 +12,10 @@ results = Results()
 def index():
     return render_template("pvp.html", title="Home", results = results)
 
+@app.route("/rules")
+def rules():
+    return render_template("rules.html", title="Rules")
+
 @app.route("/<name_1>/<choice_1>/<name_2>/<choice_2>")
 def result(name_1,choice_1,name_2,choice_2):
     player_1 = Player(name_1,choice_1)
