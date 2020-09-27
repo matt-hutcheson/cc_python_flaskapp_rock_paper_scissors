@@ -39,7 +39,6 @@ def play_game():
     results.ai_check = request.form["ai-check"]
     player_1_name = request.form["player-1-name"]
     player_1_choice = request.form["player-1-choice"]
-    print(results.ai_check)
     if results.ai_check:
         player_2_name = "Skynet"
         player_2_choice = ai_choice()
@@ -51,16 +50,16 @@ def play_game():
     game = Game(player_1, player_2)
     game.play_game(results)
     print(results.ai_check)
-    if results.ai_check == True:
+    if results.ai_check == "True":
         return redirect("/player-vs-ai")
-    else:
+    elif results.ai_check == "False":
         return redirect("/player-vs-player")
 
 @app.route("/reset-scores", methods=["POST"])
 def reset_scores():
     results.ai_check = request.form["ai-check2"]
     results.reset_scores()
-    if results.ai_check == True:
+    if results.ai_check == "True":
         return redirect("/player-vs-ai")
-    else:
+    elif results.ai_check == "False":
         return redirect("/player-vs-player")
