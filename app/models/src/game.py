@@ -15,6 +15,10 @@ class Game:
         self.choice_2 = player_2.choice.capitalize()
 
     def play_game(self, results):
+        results.player_1_name = self.player_1_name
+        results.player_1_choice = self.choice_1
+        results.player_2_name = self.player_2_name
+        results.player_2_choice = self.choice_2
         if self.choice_1 == self.choice_2:
             results.result = "Draw"
             results.draws += 1

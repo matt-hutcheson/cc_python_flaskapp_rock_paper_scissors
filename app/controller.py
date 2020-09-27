@@ -8,6 +8,7 @@ from app.models.src.results import Results
 
 results = Results()
 
+
 @app.route("/")
 def index():
     return render_template("pvp.html", title="Home", results = results)
@@ -59,4 +60,7 @@ def reset_scores():
     results.player_2_wins = 0
     results.draws = 0
     results.result = "result"
-    return redirect("/")
+    if ai_choice:
+        return redirect("/player-vs-ai")
+    else:
+        return redirect("/player-vs-player")

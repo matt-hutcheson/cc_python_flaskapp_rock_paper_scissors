@@ -37,7 +37,7 @@
     <section>
         <ul id="results">
             <li id="p1wins">
-                Player 1 wins:
+                {{ results.player_1_name }} wins:
                 {{ results.player_1_wins }}
             </li>
             <li id="draws">
@@ -45,11 +45,15 @@
                 {{ results.draws }}
             </li>
             <li id="p2wins"> 
-                Player 2 wins:
+                {{ results.player_2_name}} wins:
                 {{ results.player_2_wins}}
             </li>
             <li id=show-results>
-                <p>{{ results.result }}</p>
+                <p>
+                    {{ results.player_1_name }} played {{ results.player_1_choice }} <br>
+                    {{ results.player_2_name }} played {{ results.player_2_choice }} <br> <br>
+                    {{ results.result }}
+                </p>
             </li>
             <li>
                 <form action="/reset-scores" method="POST">
