@@ -1,3 +1,87 @@
 body {
-    background-color: hotpink;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #EFFFE9;
+}
+
+header {
+    padding: 1vw;
+    background-color: #2EC4B6;
+    text-align: center;
+}
+
+#player-1 {
+    grid-area: player-1;
+}
+
+#player-2 {
+    grid-area: player-2;
+}
+
+#game-submit {
+    grid-area: game-submit;
+    width: 20ch;
+    margin: 20px
+}
+
+#game-submit:hover {
+    background-color: #E71D36;
+}
+
+#players-split {
+    display: grid;
+    grid-template-areas: 
+        'player-1 player-2'
+        'game-submit game-submit';
+    justify-items: center;
+}
+
+.player > ul > li > label{
+    grid-area: label;
+    padding: 5px;
+}
+
+.player > ul > li > input {
+    grid-area: input;
+    padding: 5px;
+}
+
+.player > ul {
+    list-style: none;
+    display: grid;
+    grid-template-areas: 
+        'label' 
+        'input'
+        'label '
+        'input';
+    justify-items: left;
+}
+
+h2 {
+    text-align: center;
+}
+
+#p1wins {
+    grid-area: p1wins;
+}
+
+#draws {
+    grid-area: draws;
+}
+
+#p2wins {
+    grid-area: p2wins;
+}
+
+#show-results {
+    grid-area: show-results;
+    text-align: center;
+}
+
+#results {
+    list-style: none;
+    display: grid;
+    grid-template-areas: 
+        'p1wins draws p2wins'
+        'show-results show-results show-results';
+    justify-content: space-around;
 }
