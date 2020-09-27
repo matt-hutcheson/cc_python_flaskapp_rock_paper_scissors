@@ -2,14 +2,13 @@ from app import app
 
 from flask import render_template, request, redirect
 
-from app.models.src.player import *
-from app.models.src.game import *
-
-result = None
+from app.models.src.player import Player
+from app.models.src.game import Game
+from app.models.src.results import Results
 
 @app.route("/")
 def index():
-    return render_template("base.html", title="Home", result=result)
+    return render_template("base.html", title="Home")
 
 @app.route("/<name_1>/<choice_1>/<name_2>/<choice_2>")
 def result(name_1,choice_1,name_2,choice_2):

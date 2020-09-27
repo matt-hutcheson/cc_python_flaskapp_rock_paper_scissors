@@ -8,7 +8,7 @@ class TestGame(unittest.TestCase):
     def setUp(self):
         self.player_1 = Player("Bob", "Rock")
         self.player_2 = Player("Tom", "Paper")
-        self.test_results = Results(0,0,0,"play game")
+        self.test_results = Results()
 
     def test_draw__None(self):
         test_player_1 = Player("Bob", "Rock")
