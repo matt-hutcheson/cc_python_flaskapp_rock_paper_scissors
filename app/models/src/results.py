@@ -8,6 +8,7 @@ class Results():
         self.player_2_name = "Player 2"
         self.player_1_choice = "None"
         self.player_2_choice = "None"
+        self.ai_check = False
 
     def reset_scores(self):
         self.player_1_wins = 0

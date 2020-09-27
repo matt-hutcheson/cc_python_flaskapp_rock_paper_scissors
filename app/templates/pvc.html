@@ -10,3 +10,12 @@
 </div>
 <input type="hidden", id="ai-check" value="True" name="ai-check">
 {% endblock %}
+
+{% block ai_checker %}
+
+<form action="/reset-scores" method="POST">
+    <input type="hidden", id="ai-check2" value="True" name="ai-check2">
+    <input type="submit" value="Reset scores" id="reset">
+</form>
+
+{% endblock %}

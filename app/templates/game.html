@@ -24,13 +24,12 @@
                         </li>
                     </ul>
                 </div>
-                <input type="submit", value="Play game!" id="game-submit">
                 {% block player %}
 
 
 
                 {% endblock %}
-
+                <input type="submit", value="Play game!" id="game-submit">
             </section>
         </form>
     </article>
@@ -56,9 +55,9 @@
                 </p>
             </li>
             <li>
-                <form action="/reset-scores" method="POST">
-                    <input type="submit" value="Reset scores" id="reset">
-                </form>
+                {% block ai_checker %}
+
+                {% endblock %}
             </li>
         </ul>
     </section>
