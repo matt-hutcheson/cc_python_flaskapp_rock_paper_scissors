@@ -3,7 +3,7 @@ from app import app
 from flask import render_template, request, redirect
 
 from app.models.src.player import Player
-from app.models.src.game import Game
+from app.models.src.game import Game, ai_choice
 from app.models.src.results import Results
 
 results = Results()
@@ -35,19 +35,23 @@ def result(name_1,choice_1,name_2,choice_2):
 
 @app.route("/play-game", methods=["POST"])
 def play_game():
+    ai_check = request.form["ai-check"]
     player_1_name = request.form["player-1-name"]
     player_1_choice = request.form["player-1-choice"]
-    player_2_name = request.form["player-2-name"]
-    player_2_choice = request.form["player-2-choice"]
+    if ai_check:
+        player_2_name = "Skynet"
+        player_2_choice = ai_choice()
+    else:
+        player_2_name = request.form["player-2-name"]
+        player_2_choice = request.form["player-2-choice"]
     player_1 = Player(player_1_name, player_1_choice)
     player_2 = Player(player_2_name, player_2_choice)
     game = Game(player_1, player_2)
     game.play_game(results)
-    return redirect("/")
-
-@app.route("/play-game-ai", methods=["POST"])
-def play_game_ai():
-    return redirect("/")
+    if ai_check:
+        return redirect("/player-vs-ai")
+    else:
+        return redirect("/player-vs-player")
 
 @app.route("/reset-scores", methods=["POST"])
 def reset_scores():

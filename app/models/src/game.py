@@ -1,5 +1,11 @@
+from random import choice
+
 from app.models.src.player import Player
 from app.models.src.results import Results
+
+def ai_choice():
+    choices = ["Rock", "Paper", "Scissors"]
+    return choice(choices)
 
 class Game:
     def __init__(self, player_1, player_2):
