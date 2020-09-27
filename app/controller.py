@@ -56,10 +56,7 @@ def play_game():
 
 @app.route("/reset-scores", methods=["POST"])
 def reset_scores():
-    results.player_1_wins = 0
-    results.player_2_wins = 0
-    results.draws = 0
-    results.result = "result"
+    results.reset_scores()
     if ai_choice:
         return redirect("/player-vs-ai")
     else:
