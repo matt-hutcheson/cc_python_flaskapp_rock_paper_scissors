@@ -1,15 +1,12 @@
 import unittest
 
-from app.models.src.game import Game, results
+from app.models.src.game import Game
 from app.models.src.player import Player
 
 class TestGame(unittest.TestCase):
-    # def setUp(self):
-        # self.player_1_name = "Bob"
-        # self.player_2_name = "Tom"
-
-    def test_results_exist(self):
-        self.assertEqual(0, results["Player 1 wins"])
+    def setUp(self):
+        self.player_1 = Player("Bob", "Rock")
+        self.player_2 = Player("Tom", "Paper")
 
     # def test_draw__None(self):
     #     test_player_1 = Player("Bob", "Rock")
