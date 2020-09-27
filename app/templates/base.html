@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -51,8 +52,25 @@
                 <input type="submit", value="Play game!">
             </form>
         </section>
-        <section id="results">
-            <p>{{ result }}</p>
+        <section>
+            <ul id="results">
+                <li id="p1wins">
+                    Player 1 wins
+                    {{ results.player_1_wins }}
+                </li>
+                <li id="draws">
+                    Draws
+                    {{ results.draws }}
+                </li>
+                <li id="p2wins"> 
+                    Player 2 wins
+                    {{ results.player_2_wins}}
+                </li>
+                <li id=show-results>
+                    <p>{{ results.result }}</p>
+                </li>
+            </ul>
+
         </section>
     </main>
     <footer>

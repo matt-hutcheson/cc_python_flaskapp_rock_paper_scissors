@@ -9,6 +9,7 @@ class Game:
         self.choice_2 = player_2.choice.capitalize()
 
     def play_game(self, results):
+        print(results)
         if self.choice_1 == self.choice_2:
             results.result = "Draw"
             results.draws += 1

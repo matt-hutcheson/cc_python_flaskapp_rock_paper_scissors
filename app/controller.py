@@ -6,16 +6,20 @@ from app.models.src.player import Player
 from app.models.src.game import Game
 from app.models.src.results import Results
 
+results = Results()
+
 @app.route("/")
 def index():
-    return render_template("base.html", title="Home")
+    return render_template("base.html", title="Home", results = results)
 
 @app.route("/<name_1>/<choice_1>/<name_2>/<choice_2>")
 def result(name_1,choice_1,name_2,choice_2):
     player_1 = Player(name_1,choice_1)
     player_2 = Player(name_2,choice_2)
     game = Game(player_1,player_2)
-    return game.play_game()
+    url_results = Results()
+    game.play_game(url_results)
+    return url_results.result
 
 @app.route("/play-game", methods=["POST"])
 def play_game():
@@ -26,5 +30,5 @@ def play_game():
     player_1 = Player(player_1_name, player_1_choice)
     player_2 = Player(player_2_name, player_2_choice)
     game = Game(player_1, player_2)
-    result = game.play_game()
+    game.play_game(results)
     return redirect('/')
