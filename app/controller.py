@@ -39,10 +39,10 @@ def play_game():
     results.ai_check = request.form["ai-check"]
     player_1_name = request.form["player-1-name"]
     player_1_choice = request.form["player-1-choice"]
-    if results.ai_check:
+    if results.ai_check == "True":
         player_2_name = "Skynet"
         player_2_choice = ai_choice()
-    else:
+    elif results.ai_check == "False":
         player_2_name = request.form["player-2-name"]
         player_2_choice = request.form["player-2-choice"]
     player_1 = Player(player_1_name, player_1_choice)
