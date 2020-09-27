@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main>
+    <article>
+        <form action="/play-game" method="POST">
+            <section id="players-split">
+                <div id="player-1" class="player">
+                    <h2>Player 1</h2>
+                    <ul>
+                        <li>
+                            <label for="player-1-name">Name</label>
+                            <input type="text" name="player-1-name" id="player-1-name" required>
+                        </li>
+                        <li>
+                            <label for="player-1-choice">Move</label>
+                            <select name="player-1-choice" id="player-1-choice">
+                                <option value="choose" disabled="True" selected="True">--Please choose a move--</option>
+                                <option value="rock">Rock</option>
+                                <option value="paper">Paper</option>
+                                <option value="scissors">Scissors</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+
+                {% block player %}
+
+
+
+                {% endblock %}
+
+                <input type="submit", value="Play game!" id="game-submit">
+            </section>
+        </form>
+    </article>
+    <section>
+        <ul id="results">
+            <li id="p1wins">
+                Player 1 wins:
+                {{ results.player_1_wins }}
+            </li>
+            <li id="draws">
+                Draws:
+                {{ results.draws }}
+            </li>
+            <li id="p2wins"> 
+                Player 2 wins:
+                {{ results.player_2_wins}}
+            </li>
+            <li id=show-results>
+                <p>{{ results.result }}</p>
+            </li>
+            <li>
+                <form action="/reset-scores" method="POST">
+                    <input type="submit" value="Reset scores" id="reset">
+                </form>
+            </li>
+        </ul>
+    </section>
+</main>
+
+{% endblock %}

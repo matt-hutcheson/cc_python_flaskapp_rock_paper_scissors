@@ -10,7 +10,7 @@ results = Results()
 
 @app.route("/")
 def index():
-    return render_template("base.html", title="Home", results = results)
+    return render_template("pvp.html", title="Home", results = results)
 
 @app.route("/<name_1>/<choice_1>/<name_2>/<choice_2>")
 def result(name_1,choice_1,name_2,choice_2):
@@ -31,4 +31,12 @@ def play_game():
     player_2 = Player(player_2_name, player_2_choice)
     game = Game(player_1, player_2)
     game.play_game(results)
+    return redirect('/')
+
+@app.route("/reset-scores", methods=["POST"])
+def reset_scores():
+    results.player_1_wins = 0
+    results.player_2_wins = 0
+    results.draws = 0
+    results.result = "result"
     return redirect('/')

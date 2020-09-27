@@ -1,0 +1,24 @@
+{% extends "game.html" %}
+
+{% block player %}
+
+<div id="player-2" class="player">
+    <h2>Player 2</h2>
+    <ul>
+        <li>
+            <label for="player-2-name">Name</label>
+            <input type="text" name="player-2-name" id="player-2-name" required>
+        </li>
+        <li>
+            <label for="player-2-choice">Move</label>
+            <select name="player-2-choice" id="player-2-choice">
+                <option value="choose" disabled="True" selected="True">--Please choose a move--</option>
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+            </select>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
