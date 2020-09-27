@@ -1,5 +1,12 @@
-{% extends "base.html" %}
+{% extends "game.html" %}
 
-{% block game-type %}
+{% block player %}
+
+<div id="player-2" class="player">
+    <h2>Skynet</h2>
+    <div id="ai-pic">
+        <img src="{{url_for('static', filename='Robot_Emoji.png')}}" width="250" height="250" alt="robot_emoji.png">
+    </div>
+</div>
 
 {% endblock %}

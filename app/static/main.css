@@ -123,3 +123,20 @@ body > main > section {
         'reset reset reset';
     justify-content: space-around;
 }
+
+#rules-pic {
+    grid-area: rules-pic;
+}
+
+#rules-p {
+    grid-area: rules-p
+}
+
+#rules-art {
+    display: grid;
+    grid-template-areas: 
+    'rules-p'
+    'rules-pic';
+    justify-items: center;
+}
+
