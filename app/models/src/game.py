@@ -1,4 +1,5 @@
 from app.models.src.player import Player
+from app.models.src.results import Results
 
 class Game:
     def __init__(self, player_1, player_2):
@@ -17,11 +18,11 @@ class Game:
                 results.player_2_wins += 1
             elif self.choice_2 == "Scissors":
                 results.result = f"{self.player_1_name} wins by playing {self.choice_1.lower()}!"
-                resultsplayer_1_wins += 1
+                results.player_1_wins += 1
         elif self.choice_1 == "Paper":
             if self.choice_2 == "Rock":
                 results.result = f"{self.player_1_name} wins by playing {self.choice_1.lower()}!"
-                resultsplayer_1_wins += 1
+                results.player_1_wins += 1
             elif self.choice_2 == "Scissors":
                 results.result = f"{self.player_2_name} wins by playing {self.choice_2.lower()}!"
                 results.player_2_wins += 1
